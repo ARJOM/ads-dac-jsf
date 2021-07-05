@@ -2,7 +2,7 @@
 
 Este projeto está estruturado com os assuntos relacionados ao JSF.
 
-[Repositório com as configurações do banco.](https://github.com/ARJOM/ads-dac-jsf)
+[Repositório com as configurações do banco.](https://github.com/ARJOM/ads-dac-db)
 ### Compilando Código
 ```
 mvn clean package

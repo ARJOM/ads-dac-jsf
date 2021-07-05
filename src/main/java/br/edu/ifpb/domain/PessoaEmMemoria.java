@@ -6,11 +6,12 @@ import java.util.List;
 
 public class PessoaEmMemoria implements Pessoas{
 
-    private List<Pessoa> pessoas = new LinkedList<Pessoa>();
+    private List<Pessoa> pessoas = new LinkedList<>();
+    private List<Dependente> dependentes = new LinkedList<>();
 
     @Override
     public void nova(Pessoa pessoa) {
-        pessoas.add(pessoa);
+        if (this.isValid(pessoa)) pessoas.add(pessoa);
     }
 
     @Override
@@ -25,9 +26,11 @@ public class PessoaEmMemoria implements Pessoas{
 
     @Override
     public void atualizar(Pessoa pessoa) {
-        Pessoa pessoaAntiga = this.localizarPessoaComId(pessoa.getId());
-        this.excluir(pessoaAntiga);
-        this.nova(pessoa);
+        if (this.isValid(pessoa)) {
+            Pessoa pessoaAntiga = this.localizarPessoaComId(pessoa.getId());
+            this.excluir(pessoaAntiga);
+            this.nova(pessoa);
+        }
     }
 
     @Override
@@ -65,6 +68,10 @@ public class PessoaEmMemoria implements Pessoas{
 
     @Override
     public void novo(Dependente dependente) {
+        dependentes.add(dependente);
+    }
 
+    private boolean isValid(Pessoa pessoa){
+        return dependentes.contains(pessoa.getDependente());
     }
 }
