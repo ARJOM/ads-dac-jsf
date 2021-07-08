@@ -29,6 +29,13 @@ docker container start app
 
 OBS: pode ser necessário executar os comandos acima com privilégios admnistrativos.
 
+
+### Ou simplesmente execute o arquivo `start.sh`
+```
+sudo bash start.sh
+```
+
+
 **Aulas**
 
 *[Aula 1 - Conceitos Básicos ](https://github.com/ifpb-disciplinas-2021-1/ads-dac-jsf/commit/)*
