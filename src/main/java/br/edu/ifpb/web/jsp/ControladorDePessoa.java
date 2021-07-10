@@ -27,6 +27,7 @@ public class ControladorDePessoa extends HttpServlet {
         
 
     } 
+    
 
     private void encaminharResposta(HttpServletRequest request, HttpServletResponse response,Pessoa pessoa) throws IOException {
         //        request.getSession().setAttribute("nome",nome);
